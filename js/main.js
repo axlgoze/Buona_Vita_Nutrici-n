@@ -9,4 +9,15 @@ console.log(titulo.textContent) // muestra el contenido del elemento
 titulo.textContent= "Buena vida Nutrición" // modifica el contenido de texto de  la clase titulo
 
 // indice de masa corporal
-var paciente = querySelector("#");
+var paciente = document.querySelector("#primerPaciente");
+
+console.log(paciente.textContent);
+// console.log(paciente);
+
+// obtener peso
+
+var tdpeso = document.querySelector(".info-peso");
+
+var peso = tdpeso.textContent;
+
+console.log(peso)
