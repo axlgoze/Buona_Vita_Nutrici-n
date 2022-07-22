@@ -59,3 +59,9 @@ if(Peso < 0 || Peso > 1000){
     alert("Peso incorrecto");
     peso.textContent=error;
 }
+
+if(Altura < 0 || Altura > 1000){
+    var error="error";
+    alert("Peso incorrecto");
+    altura.textContent=error;
+}
