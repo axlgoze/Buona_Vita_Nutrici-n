@@ -21,3 +21,17 @@ var tdpeso = document.querySelector(".info-peso");
 var peso = tdpeso.textContent;
 
 console.log(peso)
+
+
+// obtener altura
+
+var tdaltura = document.querySelector(".info-altura")
+
+var altura = tdaltura.textContent;
+
+console.log(altura)
+
+// imc = peso * altura * altura
+
+imc = peso*altura*altura;
+console.log(imc)
