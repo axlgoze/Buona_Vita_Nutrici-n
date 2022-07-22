@@ -32,5 +32,13 @@ console.log(altura)
 
 // imc = peso / altura * altura
 
-imc = peso/(altura*altura);
+// conversiones
+
+var Peso=parseInt(peso.textContent);
+var Altura=parseInt(altura.textContent);
+
+// calculo
+
+var imc =  Peso/(Altura*Altura) ;
+
 console.log(imc);
