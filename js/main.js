@@ -42,3 +42,12 @@ var Altura=parseInt(altura.textContent);
 var imc =  Peso/(Altura*Altura) ;
 
 console.log(imc);
+
+// colocacion de valor en tabla
+
+// obtener dato de imc
+var tdIMC = paciente.querySelector(".info-imc");
+console.log(tdIMC.textContent)
+
+// asignando nuevo valor
+tdIMC.textContent = imc;
