@@ -51,3 +51,11 @@ console.log(tdIMC.textContent)
 
 // asignando nuevo valor
 tdIMC.textContent = imc;
+
+// condicionales
+
+if(Peso < 0 || Peso > 1000){
+    var error="error";
+    alert("Peso incorrecto");
+    peso.textContent=error;
+}
