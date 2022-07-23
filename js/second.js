@@ -1,4 +1,11 @@
-// aprendiendo a hacer loops
+var titulo = document.querySelector(".titulo");
+titulo.addEventListener("click",mostrarMensaje);
+
+function mostrarMensaje(){
+    console.log("Listening...");
+}
+
+
 
 // capturando clase paciente de todos los pacientes
 var pacientes = document.querySelectorAll(".paciente"); // querySelectorAll permite seleccionar mas de una clase
@@ -10,10 +17,10 @@ for(var i=0;i<pacientes.length;i++){
     var paciente=pacientes[i];
 
     var peso = paciente.querySelector(".info-peso");
-    console.log(peso);
+    // console.log(peso);
 
     var altura = paciente.querySelector(".info-altura")
-    console.log(altura)
+    // console.log(altura)
 
     var tdIMC = paciente.querySelector(".info-imc");
 
