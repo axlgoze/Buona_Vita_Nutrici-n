@@ -34,6 +34,7 @@ for(var i=0;i<pacientes.length;i++){
         pesoValido = false;
         tdIMC.textContent = error;
         console.log(imc);
+        paciente.style.color = "red";
     }
 
     if(Altura < 0 || Altura > 3.00){
