@@ -38,6 +38,19 @@ header .container:before{
 	margin: 0 auto;
 }
 
+.container2:before{
+	content: '';
+	display:inline-block;
+	height: 100%;
+	vertical-align:	middle;
+}
+
+.container2{
+	width: 60%;
+	height: 100%;
+	margin: 40px auto;
+}
+
 section{
 	margin: 2em 0;
 	overflow: hidden;
@@ -111,6 +124,7 @@ button{
     display: block;
     clear: both;
     margin: 10px 0px;
+	width: 300px;
 
 }
 
