@@ -2,6 +2,12 @@
 
 To visit the website click ["here"](https://axlgoze.github.io/Buona_Vita_Nutrici-n/)
 
+
+## Features
+
+- DOM manipulation with JavaScript
+- Good practices connecting HTML,CSS and JS
+
 ### Don't forget visit my Social Media
 
 [Instagram](https://www.instagram.com/axlze/)

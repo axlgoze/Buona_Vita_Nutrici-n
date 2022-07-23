@@ -34,7 +34,8 @@ for(var i=0;i<pacientes.length;i++){
         pesoValido = false;
         tdIMC.textContent = error;
         console.log(imc);
-        paciente.style.color = "red";
+        paciente.classList.add("paciente-incorrecto");
+
     }
 
     if(Altura < 0 || Altura > 3.00){
@@ -42,6 +43,7 @@ for(var i=0;i<pacientes.length;i++){
         alturaValida=false;
         tdIMC.textContent = error;
         console.log(imc);
+        paciente.classList.add("paciente-incorrecto");
     }
 
 
