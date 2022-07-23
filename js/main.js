@@ -32,6 +32,10 @@ console.log(altura)
 
 // imc = peso / altura * altura
 
+// obtener dato de imc
+var tdIMC = paciente.querySelector(".info-imc");
+// console.log(tdIMC.textContent)
+
 // conversiones
 
 var Peso=parseInt(peso.textContent);
@@ -41,27 +45,31 @@ var Altura=parseInt(altura.textContent);
 
 var imc =  Peso/(Altura*Altura) ;
 
-console.log(imc);
-
-// colocacion de valor en tabla
-
-// obtener dato de imc
-var tdIMC = paciente.querySelector(".info-imc");
-console.log(tdIMC.textContent)
-
-// asignando nuevo valor
-tdIMC.textContent = imc;
-
 // condicionales
 
+pesoValido = true;
+alturaValida = true;
+
+var error="Error";
+
 if(Peso < 0 || Peso > 1000){
-    var error="error";
-    alert("Peso incorrecto");
-    peso.textContent=error;
+    peso.textContent=error + ": Peso Incorrecto";
+    pesoValido = false;
+    tdIMC.textContent = error;
+    console.log(imc);
 }
 
-if(Altura < 0 || Altura > 1000){
-    var error="error";
-    alert("Peso incorrecto");
-    altura.textContent=error;
+if(Altura < 0 || Altura > 3.00){
+    altura.textContent=error + ": Altura Incorrecta";
+    console.log(error)
+    alturaValida=false;
+    tdIMC.textContent = error;
+    console.log(imc);
 }
+
+
+if(pesoValido && alturaValida){
+    // asignando nuevo valor
+    tdIMC.textContent = imc;
+}
+
