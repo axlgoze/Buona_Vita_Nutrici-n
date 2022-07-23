@@ -21,7 +21,7 @@ console.log(paciente.textContent);
 // var peso = tdpeso.textContent;
 
 
-// accediento a la informacion a partir del objeto-paciente y la clase "info-peso"
+// Accediento a la informacion a partir del objeto-paciente y la clase "info-peso"
 var peso = paciente.querySelector(".info-peso");
 console.log(peso);
 
@@ -30,19 +30,16 @@ console.log(peso);
 var altura = paciente.querySelector(".info-altura")
 console.log(altura)
 
-// imc = peso / altura * altura
-
 // obtener dato de imc
 var tdIMC = paciente.querySelector(".info-imc");
 // console.log(tdIMC.textContent)
 
 // conversiones
-
 var Peso=parseInt(peso.textContent);
 var Altura=parseInt(altura.textContent);
 
 // calculo
-
+// imc = peso / altura * altura
 var imc =  Peso/(Altura*Altura) ;
 
 // condicionales
@@ -61,7 +58,6 @@ if(Peso < 0 || Peso > 1000){
 
 if(Altura < 0 || Altura > 3.00){
     altura.textContent=error + ": Altura Incorrecta";
-    console.log(error)
     alturaValida=false;
     tdIMC.textContent = error;
     console.log(imc);
