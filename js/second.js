@@ -6,13 +6,23 @@ function mostrarMensaje(){
 }
 
 
+
 var botonAdicionar = document.querySelector("#adicionar-paciente");
 
 // uso de funcion anonima
 botonAdicionar.addEventListener("click",function(event){
     // permite no recargar la pagin una vez realizado el evento
     event. preventDefault();
-    console.log("Adding new patient")
+
+    var form = document.querySelector("#form-adicional");
+    //captura de valores accediendo a los objetos de html
+    var nombre = form.nombre.value;
+    var peso = form.peso.value;
+    var  altura = form.altura.value;
+    var porcentaje = form.gordura.value;
+    
+    console.log(nombre+ peso+ altura+ porcentaje);
+
 });
 
 
