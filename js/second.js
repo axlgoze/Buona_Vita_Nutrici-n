@@ -1,15 +1,19 @@
 var titulo = document.querySelector(".titulo");
 titulo.addEventListener("click",mostrarMensaje);
 
-var botonAdicionar = document.querySelector("#adicionar-paciente");
-// uso de funcion anonima
-botonAdicionar.addEventListener("click",function(){
-    alert("Adding new patient")
-});
-
 function mostrarMensaje(){
     console.log("Listening...");
 }
+
+
+var botonAdicionar = document.querySelector("#adicionar-paciente");
+
+// uso de funcion anonima
+botonAdicionar.addEventListener("click",function(event){
+    // permite no recargar la pagin una vez realizado el evento
+    event. preventDefault();
+    console.log("Adding new patient")
+});
 
 
 
