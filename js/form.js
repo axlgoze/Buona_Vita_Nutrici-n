@@ -28,7 +28,7 @@ botonAdicionar.addEventListener("click",function(event){
     alturaTd.textContent = altura;
     gorduraTd.textContent = porcentaje;
 
-    imcTd.textContent = 0;
+    imcTd.textContent = calcularIMC(peso,altura);
 
     //conectar js con html
     pacienteTr.appendChild(nombreTd);
