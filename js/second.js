@@ -30,16 +30,21 @@ botonAdicionar.addEventListener("click",function(event){
     alturaTd = document.createElement("td");
     gorduraTd = document.createElement("td");
 
+    imcTd =document.createElement("td");
+
     nombreTd.textContent = nombre;
     pesoTd.textContent = peso;
     alturaTd.textContent = altura;
     gorduraTd.textContent = porcentaje;
+
+    imcTd.textContent = 0;
 
     //conectar js con html
     pacienteTr.appendChild(nombreTd);
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
 
     var tabla = document.querySelector("#tabla-pacientes");
 
