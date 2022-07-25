@@ -14,18 +14,18 @@ for(var i=0;i<pacientes.length;i++){
     // accede a cada elemento del arreglo
     var paciente=pacientes[i];
 
-    var peso = paciente.querySelector(".info-peso");
+    var Peso = paciente.querySelector(".info-peso");
     // console.log(peso);
 
-    var altura = paciente.querySelector(".info-altura")
+    var Altura = paciente.querySelector(".info-altura")
     // console.log(altura)
 
     var tdIMC = paciente.querySelector(".info-imc");
 
-    var Peso=parseInt(peso.textContent);
-    var Altura=parseInt(altura.textContent);
+    var peso=parseInt(Peso.textContent);
+    var altura=parseInt(Altura.textContent);
 
-    var imc =  Peso/(Altura*Altura) ;
+    
 
     // condicionales
 
@@ -54,6 +54,11 @@ for(var i=0;i<pacientes.length;i++){
 
     if(pesoValido && alturaValida){
         // asignando nuevo valor
-        tdIMC.textContent = imc;
+        tdIMC.textContent = calcularIMC(peso,altura);
     }
+}
+
+function calcularIMC(peso,altura){
+    var imc =  peso/(altura*altura);
+    return imc.toFixed(2);;
 }
