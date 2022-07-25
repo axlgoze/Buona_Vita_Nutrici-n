@@ -12,7 +12,7 @@ var botonAdicionar = document.querySelector("#adicionar-paciente");
 // uso de funcion anonima
 botonAdicionar.addEventListener("click",function(event){
     // permite no recargar la pagin una vez realizado el evento
-    event. preventDefault();
+    event.preventDefault();
 
     var form = document.querySelector("#form-adicional");
     //captura de valores accediendo a los objetos de html
@@ -21,7 +21,31 @@ botonAdicionar.addEventListener("click",function(event){
     var  altura = form.altura.value;
     var porcentaje = form.gordura.value;
     
-    console.log(nombre+ peso+ altura+ porcentaje);
+    //row creation
+    var pacienteTr = document.createElement("tr");
+
+    //td creation
+    nombreTd = document.createElement("td");
+    pesoTd = document.createElement("td");
+    alturaTd = document.createElement("td");
+    gorduraTd = document.createElement("td");
+
+    nombreTd.textContent = nombre;
+    pesoTd.textContent = peso;
+    alturaTd.textContent = altura;
+    gorduraTd.textContent = porcentaje;
+
+    //conectar js con html
+    pacienteTr.appendChild(nombreTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+
+    var tabla = document.querySelector("#tabla-pacientes");
+
+    tabla.appendChild(pacienteTr);
+
+    console.log(pacienteTr);
 
 });
 
