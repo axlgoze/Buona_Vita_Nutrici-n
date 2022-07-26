@@ -46,11 +46,13 @@ botonAdicionar.addEventListener("click",function(event){
 function capturaDatos(form){
     //captura de valores accediendo a los objetos de html
 
+    //creacion de objeto para poder retornarlo
+    var paciente = {
+        nombre : form.nombre.value,
+        peso : form.peso.value,
+        altura : form.altura.value,
+        porcentaje : form.gordura.value
+    }
     
-    var nombre = form.nombre.value;
-    var peso = form.peso.value;
-    var  altura = form.altura.value;
-    var porcentaje = form.gordura.value;
-
-    return paciente.push
+    return paciente;
 }
