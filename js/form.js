@@ -20,12 +20,12 @@ botonAdicionar.addEventListener("click",function(event){
 
     imcTd =document.createElement("td");
     //exhibiendo informacion con propiedad textContent
-    nombreTd.textContent = nombre;
-    pesoTd.textContent = peso;
-    alturaTd.textContent = altura;
-    gorduraTd.textContent = porcentaje;
+    nombreTd.textContent = paciente.nombre;
+    pesoTd.textContent = paciente.peso;
+    alturaTd.textContent = paciente.altura;
+    gorduraTd.textContent = paciente.porcentaje;
 
-    imcTd.textContent = calcularIMC(peso,altura);
+    imcTd.textContent = calcularIMC(paciente.peso,paciente.altura);
 
     //asignar nodos a table row created
     pacienteTr.appendChild(nombreTd);
@@ -53,6 +53,6 @@ function capturaDatos(form){
         altura : form.altura.value,
         porcentaje : form.gordura.value
     }
-    
+
     return paciente;
 }
