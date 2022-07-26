@@ -8,7 +8,7 @@ botonAdicionar.addEventListener("click",function(event){
     var form = document.querySelector("#form-adicional");
 
     var paciente = capturaDatos(form);
-    
+    console.log(paciente)
     //row creation
     var pacienteTr = document.createElement("tr");
 
@@ -25,7 +25,7 @@ botonAdicionar.addEventListener("click",function(event){
     alturaTd.textContent = paciente.altura;
     gorduraTd.textContent = paciente.porcentaje;
 
-    imcTd.textContent = calcularIMC(paciente.peso,paciente.altura);
+    imcTd.textContent = paciente.imc
 
     //asignar nodos a table row created
     pacienteTr.appendChild(nombreTd);
@@ -51,7 +51,8 @@ function capturaDatos(form){
         nombre : form.nombre.value,
         peso : form.peso.value,
         altura : form.altura.value,
-        porcentaje : form.gordura.value
+        porcentaje : form.gordura.value,
+        imc : calcularIMC(form.peso.value,form.altura.value)
     }
 
     return paciente;
