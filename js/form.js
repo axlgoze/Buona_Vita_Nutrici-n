@@ -50,6 +50,13 @@ function createTr(paciente) {
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
     pacienteTr.appendChild(imcTd);
+    //adicionando clases
+    pacienteTr.classList.add("paciente");
+    nombreTd.classList.add("info-nombre");
+    pesoTd.classList.add("info-peso");
+    alturaTd.classList.add("info-altura");
+    gorduraTd.classList.add("info-gordura");
+    imcTd.classList.add("info-imc");
 
     return pacienteTr
 }
