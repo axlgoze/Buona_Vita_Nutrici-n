@@ -32,19 +32,13 @@ function capturaDatos(form){
 function createTr(paciente) {
     //row creation
     var pacienteTr = document.createElement("tr");
-    //td creation
-    var nombreTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd =document.createElement("td");
-    //exhibiendo informacion con propiedad textContent
-    nombreTd.textContent = paciente.nombre;
-    pesoTd.textContent = paciente.peso;
-    alturaTd.textContent = paciente.altura;
-    gorduraTd.textContent = paciente.porcentaje;
-    imcTd.textContent = paciente.imc
-    //asignar nodos a table row created
+    //td creation and ad class name
+    var nombreTd = createTd(paciente.nombre,"info-nombre");
+    var pesoTd = createTd(paciente.peso,"info-peso");
+    var alturaTd = createTd(paciente.altura,"info-altura");
+    var gorduraTd = createTd(paciente.porcentaje,"info-gordura");
+    var imcTd = createTd(paciente.imc,"info-imc");
+    //asignando nodos hijos
     pacienteTr.appendChild(nombreTd);
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
@@ -58,5 +52,15 @@ function createTr(paciente) {
     gorduraTd.classList.add("info-gordura");
     imcTd.classList.add("info-imc");
 
-    return pacienteTr
+    return pacienteTr;
+}
+
+function createTd(dato,clase){
+    //construccion de td
+    var td = document.createElement("td");
+    //adicion de clase
+    td.classList.add(clase);
+    //exhibiendo informacion con propiedad textContent
+    td.textContent = dato;
+    return td;
 }
