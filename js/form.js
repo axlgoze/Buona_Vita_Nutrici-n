@@ -30,25 +30,13 @@ function capturaDatos(form){
 function createTr(paciente) {
     //row creation
     var pacienteTr = document.createElement("tr");
-    //td creation and ad class name
-    var nombreTd = createTd(paciente.nombre,"info-nombre");
-    var pesoTd = createTd(paciente.peso,"info-peso");
-    var alturaTd = createTd(paciente.altura,"info-altura");
-    var gorduraTd = createTd(paciente.porcentaje,"info-gordura");
-    var imcTd = createTd(paciente.imc,"info-imc");
-    //asignando nodos hijos
-    pacienteTr.appendChild(nombreTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd);
-    pacienteTr.appendChild(imcTd);
-    //adicionando clases
-    pacienteTr.classList.add("paciente");
-    nombreTd.classList.add("info-nombre");
-    pesoTd.classList.add("info-peso");
-    alturaTd.classList.add("info-altura");
-    gorduraTd.classList.add("info-gordura");
-    imcTd.classList.add("info-imc");
+    
+    //asignando nodos hijos + td creation + class asignation
+    pacienteTr.appendChild(createTd(paciente.nombre,"info-nombre"));
+    pacienteTr.appendChild(createTd(paciente.peso,"info-peso"));
+    pacienteTr.appendChild(createTd(paciente.altura,"info-altura"));
+    pacienteTr.appendChild(createTd(paciente.porcentaje,"info-gordura"));
+    pacienteTr.appendChild(createTd(paciente.imc,"info-imc"));
 
     return pacienteTr;
 }
