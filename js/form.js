@@ -10,9 +10,7 @@ botonAdicionar.addEventListener("click",function(event){
     var pacienteTr = createTr(paciente);
     var tabla = document.querySelector("#tabla-pacientes");
     tabla.appendChild(pacienteTr);
-
-    
-
+    form.reset();
 });
 
 
