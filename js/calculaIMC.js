@@ -9,56 +9,67 @@ function mostrarMensaje(){
 var pacientes = document.querySelectorAll(".paciente"); // querySelectorAll permite seleccionar mas de una clase
 
 console.log(pacientes);
-
+//recorre todos los pacientes del form
 for(var i=0;i<pacientes.length;i++){
     // accede a cada elemento del arreglo
     var paciente=pacientes[i];
+    var tdpeso = paciente.querySelector(".info-peso");
+    var peso =tdpeso.textContent;
 
-    var Peso = paciente.querySelector(".info-peso");
-    // console.log(peso);
-
-    var Altura = paciente.querySelector(".info-altura")
-    // console.log(altura)
+    var tdaltura = paciente.querySelector(".info-altura");
+    var altura = tdaltura.textContent;
 
     var tdIMC = paciente.querySelector(".info-imc");
-
-    var peso=parseInt(Peso.textContent);
-    var altura=parseInt(Altura.textContent);
-
-    
+    // console.log(tdIMC)
 
     // condicionales
-
-    pesoValido = true;
-    alturaValida = true;
+    var pesoValido = validaPeso(peso);
+    var alturaValida = validaAltura(altura);
 
     var error="Error";
-
-    if(Peso < 0 || Peso > 1000){
+    
+    if(!pesoValido){
         peso.textContent=error + ": Peso Incorrecto";
-        pesoValido = false;
+        // pesoValido = false;
         tdIMC.textContent = error;
-        console.log(imc);
         paciente.classList.add("paciente-incorrecto");
-
     }
-
-    if(Altura < 0 || Altura > 3.00){
+    
+    if(!alturaValida){
         altura.textContent=error + ": Altura Incorrecta";
-        alturaValida=false;
+        // alturaValida=false;
         tdIMC.textContent = error;
-        console.log(imc);
+        // console.log(imc); 
         paciente.classList.add("paciente-incorrecto");
     }
-
 
     if(pesoValido && alturaValida){
         // asignando nuevo valor
+        peso = parseInt(peso.textContent)
+        // console.log(peso)
+        altura = parseInt(altura.textContent)
         tdIMC.textContent = calcularIMC(peso,altura);
     }
+
 }
 
-function calcularIMC(peso,altura){
-    var imc =  peso/(altura*altura);
-    return imc.toFixed(2);;
-}
+    function calcularIMC(peso,altura){
+        var imc =  peso/(altura*altura);
+        return imc.toFixed(2);
+    }
+
+    function validaPeso(peso){
+        if(peso >= 0 && peso <= 1000){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function validaAltura(altura){
+        if(altura > 0 && altura < 3.0){
+            return true;
+        }else{
+            return false;
+        }
+    }
