@@ -30,16 +30,13 @@ for(var i=0;i<pacientes.length;i++){
     
     if(!pesoValido){
         peso.textContent=error + ": Peso Incorrecto";
-        // pesoValido = false;
         tdIMC.textContent = error;
         paciente.classList.add("paciente-incorrecto");
     }
     
     if(!alturaValida){
         altura.textContent=error + ": Altura Incorrecta";
-        // alturaValida=false;
         tdIMC.textContent = error;
-        // console.log(imc); 
         paciente.classList.add("paciente-incorrecto");
     }
 
