@@ -10,10 +10,14 @@ botonAdicionar.addEventListener("click",function(event){
     var pacienteTr = createTr(paciente);
     var tabla = document.querySelector("#tabla-pacientes");
     //validacion de cliente
-    if(!validaPaciente(paciente)){
-        console.log("Paciente incorrecto")
+    var error = validaPaciente(paciente);
+
+    if(error.length > 0){
+        var mensajeError = document.querySelector("#mensaje-error");
+        mensajeError.textContent = error;
         return; //vacio, corta la funcion anonima; es como un break
     }
+
     tabla.appendChild(pacienteTr);
     form.reset();
 });
@@ -57,10 +61,14 @@ function createTd(dato,clase){
 }
 
 function validaPaciente(paciente){
-    // console.log(paciente.peso)
-    if(validaPeso(paciente.peso)){
-        return true;
-    }else{
-        return false;
+    var errores = [];
+    if(!validaPeso(paciente.peso)){
+        errores.push("El peso es incorrecto");
     }
+
+    if(!validaAltura(paciente.altura)){
+        errores.push("La altura es incorrecta");
+    }
+
+    return errores;
 }
