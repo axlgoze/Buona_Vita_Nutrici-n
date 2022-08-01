@@ -13,8 +13,9 @@ botonAdicionar.addEventListener("click",function(event){
     var error = validaPaciente(paciente);
 
     if(error.length > 0){
-        var mensajeError = document.querySelector("#mensaje-error");
-        mensajeError.textContent = error;
+        imprimeMensajesError(error);
+        // var mensajeError = document.querySelector("#mensaje-error");
+        // mensajeError.textContent = error;
         return; //vacio, corta la funcion anonima; es como un break
     }
 
@@ -71,4 +72,15 @@ function validaPaciente(paciente){
     }
 
     return errores;
+}
+
+
+function imprimeMensajesError(error){
+    var ul = document.querySelector("#mensajes-errores");
+
+    error.forEach(function(error) {
+        var li = document.createElement("li");
+        li.textContent = error;
+        ul.appendChild(li);
+    });
 }
