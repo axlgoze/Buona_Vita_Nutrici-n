@@ -64,7 +64,7 @@ for(var i=0;i<pacientes.length;i++){
     }
 
     function validaAltura(altura){
-        if(altura > 0 && altura < 3.0){
+        if(altura >= 0 && altura < 3.0){
             return true;
         }else{
             return false;

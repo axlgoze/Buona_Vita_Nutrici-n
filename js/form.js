@@ -63,12 +63,30 @@ function createTd(dato,clase){
 
 function validaPaciente(paciente){
     var errores = [];
+
+    
+    if(paciente.nombre.length == 0){
+        errores.push("El nombre no puede estar vacio!");
+    }
+
+    if(paciente.peso.length == 0){
+        errores.push("El peso no puede estar vacio!");
+    }
+
+    if(paciente.altura.length == 0){
+        errores.push("La altura no puede estar vacia!");
+    }
+    
+    if(paciente.porcentaje.length == 0){
+        errores.push("El porcentaje de gordura no puede estar vacia!");
+    }
+
     if(!validaPeso(paciente.peso)){
-        errores.push("El peso es incorrecto");
+        errores.push("El peso es incorrecto!");
     }
 
     if(!validaAltura(paciente.altura)){
-        errores.push("La altura es incorrecta");
+        errores.push("La altura es incorrecta!");
     }
 
     return errores;
