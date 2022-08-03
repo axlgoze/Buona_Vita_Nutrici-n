@@ -21,6 +21,9 @@ botonAdicionar.addEventListener("click",function(event){
 
     tabla.appendChild(pacienteTr);
     form.reset();
+
+    var mensajesErrores = document.querySelector("#mensajes-errores");
+    mensajesErrores.innerHTML="";
 });
 
 
@@ -78,7 +81,7 @@ function validaPaciente(paciente){
     }
     
     if(paciente.porcentaje.length == 0){
-        errores.push("El porcentaje de gordura no puede estar vacia!");
+        errores.push("El % de gordura no puede estar vacia!");
     }
 
     if(!validaPeso(paciente.peso)){
@@ -95,7 +98,7 @@ function validaPaciente(paciente){
 
 function imprimeMensajesError(error){
     var ul = document.querySelector("#mensajes-errores");
-
+    ul.innerHTML = ""
     error.forEach(function(error) {
         var li = document.createElement("li");
         li.textContent = error;
