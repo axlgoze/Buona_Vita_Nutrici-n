@@ -9,5 +9,9 @@ var pacientes = document.querySelectorAll(".paciente"); // seleciona pacientes n
 
 var tabla = document.querySelector("#tabla-pacientes");
 tabla.addEventListener("dblclick",function(event){
-    event.target.parentNode.remove();
+    event.target.parentNode.classList.add("fadeOut");
+    setTimeout(function(){
+        event.target.parentNode.remove();
+    },900);// 1000 ms es un segundo
 });
+
