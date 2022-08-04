@@ -8,7 +8,7 @@ function mostrarMensaje(){
 // capturando clase paciente de todos los pacientes
 var pacientes = document.querySelectorAll(".paciente"); // querySelectorAll permite seleccionar mas de una clase
 
-console.log(pacientes);
+// console.log(pacientes);
 //recorre todos los pacientes del form
 for(var i=0;i<pacientes.length;i++){
     // accede a cada elemento del arreglo
