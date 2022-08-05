@@ -6,5 +6,12 @@ campoFiltro.addEventListener("input",function(){
     console.log(this.value);
 
     var pacientes = document.querySelectorAll(".paciente");
-    console.log(pacientes)
+
+    // accediendo al nombre de los pacientes
+    for(var i=0; i<pacientes.length;i++){
+        var paciente = pacientes[i];
+        var tdName = paciente.querySelector(".info-nombre");
+        var nombre = tdName.textContent;
+        console.log(nombre);
+    }
 });
