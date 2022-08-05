@@ -12,6 +12,6 @@ tabla.addEventListener("dblclick",function(event){
     event.target.parentNode.classList.add("fadeOut");
     setTimeout(function(){
         event.target.parentNode.remove();
-    },900);// 1000 ms es un segundo
+    },900);// Segundo parametro para setTimeout --- 1000 ms es un segundo
 });
 
