@@ -43,7 +43,7 @@ function capturaDatos(form){
 function createTr(paciente) {
     //row creation
     var pacienteTr = document.createElement("tr");
-    
+    pacienteTr.classList.add("paciente");
     //asignando nodos hijos + td creation + class asignation
     pacienteTr.appendChild(createTd(paciente.nombre,"info-nombre"));
     pacienteTr.appendChild(createTd(paciente.peso,"info-peso"));
