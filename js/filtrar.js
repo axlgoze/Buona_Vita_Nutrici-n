@@ -13,8 +13,10 @@ campoFiltro.addEventListener("input",function(){
             var paciente = pacientes[i];
             var tdName = paciente.querySelector(".info-nombre");
             var nombre = tdName.textContent;
-            
-            if(nombre != this.value){
+            //uso de expresion regular
+            var expresion = new RegExp(this.value,"i");
+            //si no es parte del nombre hazlo invisible
+            if(!expresion.test(nombre)){
                 paciente.classList.add("invisible");
             }else{
                 paciente.classList.remove("invisible");
