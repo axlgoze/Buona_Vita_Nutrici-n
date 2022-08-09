@@ -20,11 +20,18 @@ botonAdicionar.addEventListener("click",function(event){
     }
 
     tabla.appendChild(pacienteTr);
+    adicionarPacienteEnTabla(paciente);
     form.reset();
 
     var mensajesErrores = document.querySelector("#mensajes-errores");
     mensajesErrores.innerHTML="";
 });
+
+function adicionarPacienteEnTabla(paciente){
+    var pacienteTr = createTr(paciente);
+    var tabla = document.querySelector("#tabla-pacientes");
+    tabla.appendChild(pacienteTr);
+}
 
 
 function capturaDatos(form){
@@ -33,7 +40,7 @@ function capturaDatos(form){
         nombre : form.nombre.value,
         peso : form.peso.value,
         altura : form.altura.value,
-        porcentaje : form.gordura.value,
+        gordura : form.gordura.value,
         imc : calcularIMC(form.peso.value,form.altura.value)
     }
 
@@ -48,7 +55,7 @@ function createTr(paciente) {
     pacienteTr.appendChild(createTd(paciente.nombre,"info-nombre"));
     pacienteTr.appendChild(createTd(paciente.peso,"info-peso"));
     pacienteTr.appendChild(createTd(paciente.altura,"info-altura"));
-    pacienteTr.appendChild(createTd(paciente.porcentaje,"info-gordura"));
+    pacienteTr.appendChild(createTd(paciente.gordura,"info-gordura"));
     pacienteTr.appendChild(createTd(paciente.imc,"info-imc"));
 
     return pacienteTr;
@@ -80,7 +87,7 @@ function validaPaciente(paciente){
         errores.push("La altura no puede estar vacia!");
     }
     
-    if(paciente.porcentaje.length == 0){
+    if(paciente.gordura.length == 0){
         errores.push("El % de gordura no puede estar vacia!");
     }
 
