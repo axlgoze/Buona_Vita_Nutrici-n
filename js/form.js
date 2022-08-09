@@ -19,7 +19,6 @@ botonAdicionar.addEventListener("click",function(event){
         return; //vacio, corta la funcion anonima; es como un break
     }
 
-    // tabla.appendChild(pacienteTr);
     adicionarPacienteEnTabla(paciente);
     form.reset();
 
